@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added localization support for `mn` (Mongolian, Mongolia)
 
+### Fixed
+
+- Fixed the selection (Cut/Copy/Paste) context menu not appearing when the selection extends beyond the visible viewport — e.g. selecting a range taller than the viewport, scrolling a selection out of view, or **Select All** on a long document. The context menu anchors are now clamped into the editor's visible region so it stays on-screen, matching the behavior of a multiline `TextField`.
+
 ## [11.5.0] - 2025-10-18
 
 ### Fixed
