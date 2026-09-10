@@ -13,7 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed an issue where bullet points became visually detached from the text body when toggling text direction formatting (RTL) by locking the list leading block to the editor's base text direction.
+- Fixed a brief toolbar flicker when tapping a checkbox: the header, inline, and color buttons momentarily reflected the tapped line's style and the checklist button briefly toggled before the selection was restored. The checkbox tap's gesture-driven caret move is now ignored and the checkbox is formatted silently.
 - Fixed typed text being inserted at the previous caret position on Android after moving the caret with a tap/mouse by keeping the platform IME's editing state in sync with the selection even when the keyboard is hidden.
+
+### Deprecated
+
+- Deprecated `QuillController.toolbarButtonToggler`. It was an internal-only workaround for syncing a few toolbar block buttons during checkbox taps and no longer has any effect now that the flicker is fixed at its source. Toolbar button state derives from `getSelectionStyle()`. It will be removed in future versions.
 
 ### Removed
 
